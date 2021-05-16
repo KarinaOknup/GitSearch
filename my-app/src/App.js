@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
-import Start from './components/Main/Start/Start';
+import Fail from './components/Main/Fail/Fail';
 
 
 function App(props) {
@@ -9,7 +9,7 @@ function App(props) {
   return (
     <div className = 'app-wrapper'>
       <Header />
-      <Start />
+      <Fail />
     </div>
   );
 }
