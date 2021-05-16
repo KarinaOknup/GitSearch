@@ -1,0 +1,8 @@
+.success{
+  margin: 43px 56px;
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-gap: 82px;
+  font-family: Inter;
+  font-style: normal;
+}
