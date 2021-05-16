@@ -6,7 +6,11 @@ function Header(props) {
 
   return (
     <header className = 'header'>
-      <img src="../../gitLogo.png" alt="git_logo" className="gitLogo" />
+      <i className="fab fa-github git-logo"></i>
+      <div className="search-box">
+        <i className="fal fa-search search-feedback"></i>
+        <input type="text" className="search-input" placeholder="Search"/>
+      </div>
     </header>
   );
 }
