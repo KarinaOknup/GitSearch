@@ -6,7 +6,10 @@ function Start(props) {
 
   return (
     <div className = 'start'>
-      ddddddd
+      <div className="start-box">
+      <i className="fas fa-search"></i>
+      <span>Start with searching a GitHub user</span>
+      </div>
     </div>
   );
 }

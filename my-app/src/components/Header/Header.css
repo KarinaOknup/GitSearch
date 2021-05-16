@@ -18,8 +18,7 @@
     display: block;
     font-size: 14px;
     color:#808080;
-    top: 28px;
-    margin-left: 20px;
+    margin: 14px auto auto 15px;
   }
 .search-input {
   background: #FFFFFF;
@@ -28,4 +27,6 @@
   width: 500px;
   height: 40px;
   padding-left: 40px;
+  outline: none;
+
 }
