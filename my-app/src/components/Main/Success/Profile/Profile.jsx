@@ -1,24 +1,21 @@
 import React from 'react';
 import './Profile.css';
-import me from './me.jpg'
-
 
 function Profile(props) {
 
   return (
     <div className = 'profile'>
-      {/* ВСЁ ГЕНЕРИРУЕТСЯ И ССЫЛКИ ВСТАВЛЯЮТСЯ
-      ПОСРЕДСТВОМ ЗАПРОСА НА API*/}
-      <img src={me} alt="имя разработчика" className='user-img' />
-      <h2>Имя разработчика</h2>
-      <a href="#">Ccылка на акк</a>
+      {console.log(props)}
+      <img src = {props.props.avatar_url} alt="имя разработчика" className='user-img' />
+      <h2>{props.props.name}</h2>
+      <a href={props.props.html_url}>{props.props.login}</a>
       <div className="followers">
-        <i class="fas fa-user-friends"></i>
-        <span>followers</span>
+        <i className="fas fa-user-friends"></i>
+        <span>{props.props.followers} followers</span>
       </div>
       <div className="following">
-        <i class="fas fa-user"></i>
-        <span>following</span>
+        <i className="fas fa-user"></i>
+        <span>{props.props.following} following</span>
       </div>
     </div>
   );
