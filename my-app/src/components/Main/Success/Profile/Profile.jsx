@@ -2,10 +2,8 @@ import React from 'react';
 import './Profile.css';
 
 function Profile(props) {
-
   return (
     <div className = 'profile'>
-      {console.log(props)}
       <img src = {props.props.avatar_url} alt="имя разработчика" className='user-img' />
       <h2>{props.props.name}</h2>
       <a href={props.props.html_url}>{props.props.login}</a>

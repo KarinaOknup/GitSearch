@@ -1,17 +1,16 @@
 import React from 'react';
 import './Repositories.css';
+import RepItem from './RepItem/RepItem';
 
 
 function Repositories(props) {
-
+  let repositories = props.props.map(repItem =><RepItem description = {repItem.description}  url = {repItem.svn_url} name = {repItem.name} key = {repItem.id}/>)
+  console.log(repositories)
   return (
-    <div className = 'repositories'>
-      <h2>Repositories ('переменная с кол-вом репазиториев')</h2>
+      <div className = 'repositories'>
+      <h2>Repositories ({props.props.length})</h2>
       <div className="rep-box">
-        <div className="rep-item">
-          <a href="#">Название репазитория</a>
-          <h4>Здесь находится описание примера репазитория</h4>
-        </div>
+      {repositories}
       </div>
       <div className="pagination-box">
         <span>кол-во показанных</span>
@@ -19,6 +18,7 @@ function Repositories(props) {
       </div>
     </div>
   );
-}
+  }
+
 
 export default Repositories;

@@ -10,6 +10,7 @@ function Success(props) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [items, setItems] = useState([]);
+  const [repos, setRepos] = useState([]);
 
   useEffect(() => {
     fetch("https://api.github.com/users/cardamo")
@@ -24,6 +25,17 @@ function Success(props) {
           setError(error);
         }
       )
+      .then(fetch("https://api.github.com/users/cardamo/repos")
+            .then(res => res.json())
+            .then(
+              (result) => {
+                setIsLoaded(true);
+                setRepos(result);
+              },
+              (error) => {
+                setIsLoaded(true);
+                setError(error);
+              }))
   }, [])
 
   if (error) {
@@ -34,7 +46,7 @@ function Success(props) {
         return (
         <div className='success'>
           <Profile props = {items} />
-          <Repositories />
+          <Repositories props = {repos} />
         </div>
       );
     }
