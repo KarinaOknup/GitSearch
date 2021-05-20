@@ -4,11 +4,12 @@ import RepItem from './RepItem/RepItem';
 
 
 function Repositories(props) {
-  let repositories = props.props.map(repItem =><RepItem description = {repItem.description}  url = {repItem.svn_url} name = {repItem.name} key = {repItem.id}/>)
+  console.log(props.repositories);
+  let repositories = props.repositories.map(repItem =><RepItem description = {repItem.description}  url = {repItem.svn_url} name = {repItem.name} key = {repItem.id}/>)
   console.log(repositories)
   return (
       <div className = 'repositories'>
-      <h2>Repositories ({props.props.length})</h2>
+      <h2>Repositories ({props.repositories.length})</h2>
       <div className="rep-box">
       {repositories}
       </div>

@@ -1,8 +1,10 @@
 .repositories{
+  height: 100vh;
   display: grid;
   grid-template-rows: 1fr 5fr 1fr;
 }
 .repositories h2{
+  margin: 0 0 20px;
   font-weight: 600;
   font-size: 32px;
   line-height: 42px;

@@ -1,7 +1,7 @@
 .profile{
   display: grid;
   grid-template-columns: auto auto;
-  grid-template-rows: 300px 70px 50px auto;
+  grid-template-rows: 280px 70px 55px auto;
   grid-template-areas:
   "img img"
   "user-name user-name"

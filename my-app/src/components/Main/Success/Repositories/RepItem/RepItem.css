@@ -2,6 +2,8 @@
   background-color: seashell;
   height: 64px;
   padding: 24px 32px;
+  margin-right: 200px;
+  margin-bottom: 20px;
 }
 .rep-item a{
   font-weight: 500;
@@ -15,4 +17,5 @@
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
+  overflow: hidden;
 }
