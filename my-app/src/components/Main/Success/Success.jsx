@@ -6,17 +6,17 @@ import './Success.css';
 
 
 function Success(props) {
-  if(props.state.repositories){
+    if(props.repos){
   return(
         <div className='success'>
-          <Profile user = {props.state.user} />
-          <Repositories repositories = {props.state.repositories} />
+          <Profile user = {props.user} />
+          <Repositories repos = {props.repos} />
         </div>
   )
   }
   else {
     return (<div className='success'>
-          <Profile user = {props.state.user} />
+          <Profile user = {props.user} />
     </div>)
   }
 }

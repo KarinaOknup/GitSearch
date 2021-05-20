@@ -39,8 +39,8 @@ function Main(props) {
                 setIsLoaded(true);
                 setError(error);
               }))
-  }, [])
-  if (!props.state.login){
+  }, []);
+  if (!props.state.user.login){
     return (<Start />);
   }
   else if (error) {
