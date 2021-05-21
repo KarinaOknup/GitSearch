@@ -1,5 +1,5 @@
 .repositories{
-  height: 100vh;
+  height: 500px;
   display: grid;
   grid-template-rows: 1fr 5fr 1fr;
 }
@@ -8,4 +8,37 @@
   font-weight: 600;
   font-size: 32px;
   line-height: 42px;
+}
+.pag-box{
+  width: 400px;
+  margin-left: auto;
+  margin-right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  cursor: pointer;
+}
+
+.pagination a {
+  padding: 5px;
+  border-radius: 5px;
+  color: #808080;
+}
+
+.pag-nav {
+  font-weight: bold;
+}
+
+.pag-nav--active a {
+  color: #fff;
+  background:#0064EB;;
+}
+
+.pag-nav--disabled a {
+  color: rgb(198, 197, 202);
 }
