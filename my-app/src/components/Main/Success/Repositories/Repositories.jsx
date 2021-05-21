@@ -30,7 +30,7 @@ function Repositories(props) {
          {currentPageData}
       </div>
       <div className='pag-box'>
-        <span>{ pageCount==currentPage?props.repos.length : (currentPage+1)*4}/{props.repos.length}</span>
+        <span>{!((currentPage+1)*4 >=props.repos.length) ? (currentPage+1)*4 : props.repos.length} of {props.repos.length} items</span>
         <ReactPaginate
           previousLabel={"<"}
           nextLabel={">"}
