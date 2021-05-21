@@ -6,7 +6,8 @@ import './Success.css';
 
 
 function Success(props) {
-    if(props.repos){
+  console.log(props);
+  if(props.repos.length){
   return(
         <div className='success'>
           <Profile user = {props.user} />
@@ -20,5 +21,6 @@ function Success(props) {
     </div>)
   }
 }
+
 
 export default Success;

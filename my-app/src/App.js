@@ -1,11 +1,9 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header/Header';
+import './components/Header/Header.css';
+import Main from './components/Main/Main'
 import { useState } from 'react';
 import { useEffect } from 'react';
-import Start from './components/Main/Start/Start';
-import Fail from './components/Main/Fail/Fail';
-import Success from './components/Main/Success/Success';
 
 function App(props) {
   const [error, setError] = useState(null);
@@ -14,10 +12,21 @@ function App(props) {
   const [user, setUser] = useState([]);
   const [repos,setRepos] =useState([])
   const [enter,setEnter] = useState(false);
+  const [start,setStart] = useState(true);
 
-  function getApi(name) {
-    console.log('включился');
-    fetch(`https://api.github.com/users/${name}`)
+
+  function search(e){
+    setEnter(false);
+    console.log(e.keyCode);
+    if(e.keyCode===13) setEnter(true);
+    console.log(enter);
+  }
+
+  useEffect(() => {
+    if (enter){
+      setStart(false);
+      console.log('Я в useEffect');
+      fetch(`https://api.github.com/users/${login}`)
       .then(res => res.json())
       .then(
         (result) => {
@@ -29,7 +38,7 @@ function App(props) {
           setError(error);
         }
       )
-      .then(fetch(`https://api.github.com/users/${name}/repos`)
+      .then(fetch(`https://api.github.com/users/${login}/repos`)
             .then(res => res.json())
             .then(
               (result) => {
@@ -39,49 +48,24 @@ function App(props) {
               (error) => {
                 setIsLoaded(true);
                 setError(error);
-              }))
-  }
-  function changeLogin(name){
-    setLogin(name);
-    console.log(name);
-  }
-  function search(){
-   setEnter(true)
-  }
+              }
+              )
+          )}
+    },[enter])
 
-  useEffect(() => {
-    if(enter){
-      getApi(user);
-      setEnter(false)
-  }}, []);
-
-  if (!login){
-    return (
+    return(
       <div className = 'app-wrapper'>
-      <Header user = {changeLogin} search = {search} />
-      <Start />
+      <header className = 'header'>
+      <i className="fab fa-github git-logo"></i>
+      <div className="search-box">
+        <i className="fas fa-search search-feedback"></i>
+        <input type="text" className="search-input" placeholder="Enter GitHub username"
+          onChange = {e => setLogin( e.target.value )} onKeyDown = {e => search(e)} />
       </div>
-      );
-  }
-  else if (error) {
-    return (
-      <div className = 'app-wrapper'>
-      <Header user = {changeLogin} search = {search} />
-      <Fail />
-      </div>);
-  } else if (!isLoaded) {
-    return     <div className = 'app-wrapper'>
-    <Header user = {changeLogin} search = {search} />
-    <p> Загрузка... </p>
-  </div>;
-  } else {
-    return (
-    <div className = 'app-wrapper'>
-      <Header user = {changeLogin} search = {search} />
-      <Success user = {user} repos = {repos}/>
-    </div>
-  );
-}
+      </header>
+      <Main error = {error} isLoaded = {isLoaded} user = {user} repos = {repos} start = {start}/>
+      </div>
+    )
 }
 
 export default App;

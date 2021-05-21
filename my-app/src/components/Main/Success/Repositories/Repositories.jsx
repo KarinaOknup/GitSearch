@@ -14,7 +14,7 @@ function Repositories(props) {
       </div>
       <div className="pagination-box">
         <span>кол-во показанных</span>
-        <div className="pagination">Здесь будет пагинация)</div>
+        <div className="pagination">Здесь будет пагинация) react-paginate</div>
       </div>
     </div>
   );
