@@ -5,6 +5,7 @@ import Main from './components/Main/Main'
 import { useState } from 'react';
 import { useEffect } from 'react';
 
+
 function App(props) {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -17,15 +18,12 @@ function App(props) {
 
   function search(e){
     setEnter(false);
-    console.log(e.keyCode);
     if(e.keyCode===13) setEnter(true);
-    console.log(enter);
   }
 
   useEffect(() => {
     if (enter){
       setStart(false);
-      console.log('Я в useEffect');
       fetch(`https://api.github.com/users/${login}`)
       .then(res => res.json())
       .then(

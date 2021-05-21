@@ -1,11 +1,11 @@
 import React from 'react';
-import Start from './Start/Start'
+import Start from './Start/Start';
 import Fail from './Fail/Fail';
 import Success from './Success/Success.jsx';
+import Load from './Load/Load';
 
 
 function Main(props) {
-      console.log(props.error);
       if(props.start){
         return (
         <div className = 'main'>
@@ -21,9 +21,7 @@ function Main(props) {
       )
       } else if (!props.isLoaded) {
         return (
-        <div className = 'main'>
-        <p> Загрузка... </p>
-        </div>
+        <Load />
         )
     } else if (props.user.message) {
       return (
