@@ -21,7 +21,9 @@ function Main(props) {
       )
       } else if (!props.isLoaded) {
         return (
-        <Load />
+          <div className = 'main'>
+                <Load />
+                </div>
         )
     } else if (props.user.message) {
       return (

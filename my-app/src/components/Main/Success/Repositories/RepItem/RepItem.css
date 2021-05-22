@@ -18,3 +18,10 @@
   line-height: 19px;
   overflow: hidden;
 }
+@media (max-width:800px) {
+
+  .rep-item{
+    background-color: rgb(255, 255, 255);
+  }
+
+}

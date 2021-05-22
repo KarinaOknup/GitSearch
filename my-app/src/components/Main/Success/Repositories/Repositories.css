@@ -10,12 +10,13 @@
   line-height: 42px;
 }
 .pag-box{
-  width: 400px;
-  margin-left: auto;
-  margin-right: 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+.pag-box span{
+  color: #808080;
+
 }
 .pagination {
   display: flex;
@@ -37,4 +38,16 @@
 }
 .pag-nav--disabled a {
   color: rgb(198, 197, 202);
+}
+@media (max-width:800px) {
+
+  .repositories h2{
+    margin: 20px auto;
+      }
+}
+
+@media (max-width:800px) {
+.pag-box{
+  margin: auto;
+}
 }

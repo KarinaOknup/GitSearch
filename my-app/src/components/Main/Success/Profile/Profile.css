@@ -45,3 +45,36 @@
   color: #8d8d8d;
   margin-right: 10px ;
 }
+@media (max-width:800px) {
+  .profile{
+    margin:43px auto;
+    grid-template-columns: auto auto ;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+    "img user-name "
+    "img user-a "
+    "img following "
+    "img followers";
+
+    height: 250px;
+  }
+  .profile a{
+    margin-top: 10px;
+  }
+  .user-img{
+    margin-right: 50px;
+  }
+}
+@media (max-width:550px) {
+  .profile{
+    grid-template-columns: auto auto;
+    grid-template-rows: 280px 70px 55px auto;
+    grid-template-areas:
+    "img img"
+    "user-name user-name"
+    "user-a user-a"
+    "followers following";
+    height: 432px;
+  }
+
+}

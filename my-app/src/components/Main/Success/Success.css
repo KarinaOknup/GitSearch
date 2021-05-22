@@ -6,3 +6,11 @@
   font-family: Inter;
   font-style: normal;
 }
+@media (max-width:800px) {
+  .success{
+    margin:43px auto;
+    grid-template-columns: 100vw;
+    grid-template-rows: auto auto;
+    justify-content: center;
+  }
+}
