@@ -1,4 +1,4 @@
-.start-box{
+.start-box {
   width: 150px;
   height: 200px;
   display: flex;
@@ -9,6 +9,6 @@
   font-size: 22px;
   margin: 250px auto;
 }
-.start-box .fa-search{
+.start-box .fa-search {
   font-size: 64px;
 }

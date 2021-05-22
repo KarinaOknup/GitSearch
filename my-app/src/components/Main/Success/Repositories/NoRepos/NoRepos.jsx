@@ -1,13 +1,12 @@
-import React from 'react';
-import './NoRepos.css';
-
+import React from "react";
+import "./NoRepos.css";
 
 function NoRepos(props) {
   return (
-    <div className = 'no-repos'>
+    <div className="no-repos">
       <div className="no-repos-box">
-      <i className="fas fa-times"></i>
-      <span>Repository list is empty</span>
+        <i className="fas fa-times"></i>
+        <span>Repository list is empty</span>
       </div>
     </div>
   );

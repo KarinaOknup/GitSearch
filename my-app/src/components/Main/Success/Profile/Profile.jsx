@@ -1,10 +1,14 @@
-import React from 'react';
-import './Profile.css';
+import React from "react";
+import "./Profile.css";
 
 function Profile(props) {
   return (
-    <div className = 'profile'>
-      <img src = {props.user.avatar_url} alt="имя разработчика" className='user-img' />
+    <div className="profile">
+      <img
+        src={props.user.avatar_url}
+        alt="имя разработчика"
+        className="user-img"
+      />
       <h2>{props.user.name}</h2>
       <a href={props.user.html_url}>{props.user.login}</a>
       <div className="followers">

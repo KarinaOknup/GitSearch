@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import ReactPaginate from "react-paginate";
-import { useState } from 'react';
-import './Repositories.css';
-import RepItem from './RepItem/RepItem';
+import { useState } from "react";
+import "./Repositories.css";
+import RepItem from "./RepItem/RepItem";
 
 const PER_PAGE = 4;
 
@@ -13,24 +13,30 @@ function Repositories(props) {
     setCurrentPage(selectedPage);
   }
   const offset = currentPage * PER_PAGE;
-  const currentPageData = props.repos.slice(offset, offset + PER_PAGE)
-      .map(repItem => <RepItem
-                        description = {repItem.description}
-                        url = {repItem.svn_url}
-                        name = {repItem.name}
-                        key = {repItem.id}/>
-                        );
+  const currentPageData = props.repos
+    .slice(offset, offset + PER_PAGE)
+    .map((repItem) => (
+      <RepItem
+        description={repItem.description}
+        url={repItem.svn_url}
+        name={repItem.name}
+        key={repItem.id}
+      />
+    ));
 
   const pageCount = Math.ceil(props.repos.length / PER_PAGE);
 
   return (
-      <div className = 'repositories'>
+    <div className="repositories">
       <h2>Repositories ({props.repos.length})</h2>
-      <div className="rep-box">
-         {currentPageData}
-      </div>
-      <div className='pag-box'>
-        <span>{!((currentPage+1)*4 >=props.repos.length) ? (currentPage+1)*4 : props.repos.length} of {props.repos.length} items</span>
+      <div className="rep-box">{currentPageData}</div>
+      <div className="pag-box">
+        <span>
+          {!((currentPage + 1) * 4 >= props.repos.length)
+            ? (currentPage + 1) * 4
+            : props.repos.length}{" "}
+          of {props.repos.length} items
+        </span>
         <ReactPaginate
           previousLabel={"<"}
           nextLabel={">"}
@@ -45,7 +51,6 @@ function Repositories(props) {
       </div>
     </div>
   );
-  }
-
+}
 
 export default Repositories;

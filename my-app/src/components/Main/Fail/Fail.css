@@ -1,4 +1,4 @@
-.fail-box{
+.fail-box {
   width: 150px;
   height: 200px;
   display: flex;
@@ -9,6 +9,6 @@
   color: #808080;
   margin: 250px auto;
 }
-.fail-box .fa-user{
+.fail-box .fa-user {
   font-size: 100px;
 }
