@@ -9,7 +9,7 @@ function RepItem(props) {
       </a>
       <h4>
         {props.description ||
-          "It is sad, but there are not any description ((("}
+          "It is sad, but there are not any description ..."}
       </h4>
     </div>
   );
