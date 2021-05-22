@@ -1,0 +1,14 @@
+.start-box {
+  width: 150px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-align: center;
+  color: #808080;
+  font-size: 22px;
+  margin: 250px auto;
+}
+.start-box .fa-search {
+  font-size: 64px;
+}

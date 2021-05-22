@@ -1,0 +1,51 @@
+.repositories {
+  height: 500px;
+  display: grid;
+  grid-template-rows: 1fr 5fr 1fr;
+}
+.repositories h2 {
+  margin: 0 0 20px;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 42px;
+}
+.pag-box {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.pag-box span {
+  color: #808080;
+}
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  cursor: pointer;
+}
+.pagination a {
+  padding: 5px;
+  border-radius: 5px;
+  color: #808080;
+}
+.pag-nav {
+  font-weight: bold;
+}
+.pag-nav--active a {
+  color: #fff;
+  background: #0064eb;
+}
+.pag-nav--disabled a {
+  color: rgb(198, 197, 202);
+}
+@media (max-width: 800px) {
+  .repositories h2 {
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .pag-box {
+    margin: auto;
+  }
+}

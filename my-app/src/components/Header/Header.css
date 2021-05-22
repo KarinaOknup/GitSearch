@@ -1,0 +1,52 @@
+.header {
+  width: 100vw;
+  height: 72px;
+  background-color: #0064eb;
+  display: flex;
+  flex-wrap: nowrap;
+}
+.git-logo {
+  color: #ffff;
+  font-size: 40px;
+  margin: 16px 24px 16px 42px;
+}
+.search-box {
+  margin-top: 16px;
+}
+.search-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  font-size: 14px;
+  color: #808080;
+  margin: 14px auto auto 15px;
+}
+.search-input {
+  background: #ffffff;
+  border: none;
+  border-radius: 6px;
+  width: 457px;
+  height: 40px;
+  padding-left: 40px;
+  outline: none;
+}
+@media (max-width: 650px) {
+  .header {
+    height: auto;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: auto auto;
+  }
+  .search-box {
+    margin: 10px;
+    width: 100%;
+  }
+  .git-logo {
+    margin: auto;
+  }
+}
+@media (max-width: 550px) {
+  .search-input {
+    width: 200px;
+  }
+}

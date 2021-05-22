@@ -1,0 +1,79 @@
+.profile {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 280px 70px 55px auto;
+  grid-template-areas:
+    "img img"
+    "user-name user-name"
+    "user-a user-a"
+    "followers following";
+  height: 432px;
+}
+.user-img {
+  grid-area: img;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.profile h2 {
+  grid-area: user-name;
+  font-weight: 600;
+  font-size: 26px;
+}
+.profile a {
+  grid-area: user-a;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  outline: none;
+  text-decoration: none;
+  color: #0064eb;
+}
+.followers {
+  grid-area: followers;
+}
+.following {
+  grid-area: following;
+}
+.profile div {
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 24px;
+}
+.profile div i {
+  color: #8d8d8d;
+  margin-right: 10px;
+}
+@media (max-width: 800px) {
+  .profile {
+    margin: 43px auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+      "img user-name "
+      "img user-a "
+      "img following "
+      "img followers";
+
+    height: 250px;
+  }
+  .profile a {
+    margin-top: 10px;
+  }
+  .user-img {
+    margin-right: 50px;
+  }
+}
+@media (max-width: 550px) {
+  .profile {
+    grid-template-columns: auto auto;
+    grid-template-rows: 280px 70px 55px auto;
+    grid-template-areas:
+      "img img"
+      "user-name user-name"
+      "user-a user-a"
+      "followers following";
+    height: 432px;
+  }
+}
