@@ -16,7 +16,10 @@ function App(props) {
 
   function search(e) {
     setEnter(false);
-    if (e.keyCode === 13) setEnter(true);
+    if (e.keyCode === 13) {
+      setLogin(login.replace(/\s/g, ""));
+      setEnter(true);
+    }
   }
 
   useEffect(() => {
