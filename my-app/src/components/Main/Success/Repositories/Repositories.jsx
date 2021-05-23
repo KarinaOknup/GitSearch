@@ -25,32 +25,40 @@ function Repositories(props) {
     ));
 
   const pageCount = Math.ceil(props.repos.length / PER_PAGE);
-
-  return (
-    <div className="repositories">
-      <h2>Repositories ({props.repos.length})</h2>
-      <div className="rep-box">{currentPageData}</div>
-      <div className="pag-box">
-        <span>
-          {!((currentPage + 1) * 4 >= props.repos.length)
-            ? (currentPage + 1) * 4
-            : props.repos.length}{" "}
-          of {props.repos.length} items
-        </span>
-        <ReactPaginate
-          previousLabel={"<"}
-          nextLabel={">"}
-          pageCount={pageCount}
-          onPageChange={handlePageClick}
-          containerClassName={"pagination"}
-          previousLinkClassName={"pag-nav"}
-          nextLinkClassName={"pag-nav"}
-          disabledClassName={"pag-nav--disabled"}
-          activeClassName={"pag-nav--active"}
-        />
+  if (props.repos.length <= 4) {
+    return (
+      <div className="repositories">
+        <h2>Repositories ({props.repos.length})</h2>
+        <div className="rep-box">{currentPageData}</div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="repositories">
+        <h2>Repositories ({props.repos.length})</h2>
+        <div className="rep-box">{currentPageData}</div>
+        <div className="pag-box">
+          <span>
+            {!((currentPage + 1) * 4 >= props.repos.length)
+              ? (currentPage + 1) * 4
+              : props.repos.length}{" "}
+            of {props.repos.length} items
+          </span>
+          <ReactPaginate
+            previousLabel={"<"}
+            nextLabel={">"}
+            pageCount={pageCount}
+            onPageChange={handlePageClick}
+            containerClassName={"pagination"}
+            previousLinkClassName={"pag-nav"}
+            nextLinkClassName={"pag-nav"}
+            disabledClassName={"pag-nav--disabled"}
+            activeClassName={"pag-nav--active"}
+          />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Repositories;
