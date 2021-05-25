@@ -24,7 +24,7 @@
 .profile a {
   grid-area: user-a;
   font-size: 18px;
-  margin:15px 0;
+  margin: 15px 0;
   outline: none;
   text-decoration: none;
   color: #0064eb;
@@ -61,15 +61,15 @@
 }
 @media (max-width: 550px) {
   .profile {
-   text-align: center;
-   grid-template-areas:
+    text-align: center;
+    grid-template-areas:
       "img img"
       "user-name user-name"
       "user-a user-a"
       "followers following";
     height: 432px;
   }
-  .user-img{
+  .user-img {
     margin: auto;
   }
 }

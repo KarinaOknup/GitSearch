@@ -6,20 +6,20 @@
   height: 40vmin;
   pointer-events: none;
 }
-.alert-rus{
+.alert-rus {
   width: 250px;
   background-color: rgb(255, 255, 255);
   font-size: 14px;
   position: absolute;
-  top:75px;
+  top: 75px;
   left: 30px;
   padding: 10px;
   text-align: center;
-  border:solid 2px royalblue;
+  border: solid 2px royalblue;
   border-radius: 6px;
 }
 @media (max-width: 650px) {
-  .alert-rus{
+  .alert-rus {
     top: 125px;
   }
 }

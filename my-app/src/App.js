@@ -19,16 +19,18 @@ function App(props) {
     if (e.keyCode === 13) {
       setLogin(login.replace(/\s/g, ""));
       let rus = /[а-яё]/i.test(login);
-      if(!rus){
+      if (!rus) {
         setEnter(true);
-      }else if (rus) {
+      } else if (rus) {
         let alert = document.createElement("div");
         alert.className = "alert-rus";
         alert.innerText = "You should use only english letters";
         document.body.append(alert);
-        setTimeout(()=>{ document.body.removeChild(alert) },2000)
+        setTimeout(() => {
+          document.body.removeChild(alert);
+        }, 2000);
       }
-      console.log(login)
+      console.log(login);
     }
   }
 
