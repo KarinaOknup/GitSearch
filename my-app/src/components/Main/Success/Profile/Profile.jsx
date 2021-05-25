@@ -10,7 +10,7 @@ function Profile(props) {
         className="user-img"
       />
       <h2>{props.user.name}</h2>
-      <a href={props.user.html_url}>{props.user.login}</a>
+      <a href={props.user.html_url} target="_blank" rel="noreferrer">{props.user.login}</a>
       <div className="followers">
         <i className="fas fa-user-friends"></i>
         <span>{props.user.followers} followers</span>

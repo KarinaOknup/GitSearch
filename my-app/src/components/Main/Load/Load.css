@@ -2,6 +2,11 @@
   margin: auto;
   margin-top: 20em;
 }
+@media (max-width: 500px) {
+  .load {
+    margin-top: 10em;
+  }
+}
 .ring {
   position: relative;
   width: 45px;

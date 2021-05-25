@@ -42,7 +42,7 @@
     width: 100%;
   }
   .git-logo {
-    margin: auto;
+    margin: 10px auto;
   }
 }
 @media (max-width: 550px) {

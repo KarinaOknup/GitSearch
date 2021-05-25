@@ -3,6 +3,7 @@
   height: 64px;
   padding: 24px 32px;
   margin-bottom: 20px;
+  overflow: hidden;
 }
 .rep-item a {
   font-weight: 500;
@@ -11,6 +12,10 @@
   text-decoration: none;
   outline: none;
   color: #0064eb;
+  display: flex;
+  flex-flow: nowrap;
+  overflow: hidden;
+
 }
 .rep-item h4 {
   font-weight: normal;
