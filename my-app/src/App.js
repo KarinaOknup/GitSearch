@@ -24,7 +24,7 @@ function App(props) {
       } else if (rus) {
         let alert = document.createElement("div");
         alert.className = "alert-rus";
-        alert.innerText = "You should use only english letters";
+        alert.innerText = "You should use the Latin Alphabet";
         document.body.append(alert);
         setTimeout(() => {
           document.body.removeChild(alert);
