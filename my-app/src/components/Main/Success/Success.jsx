@@ -5,11 +5,11 @@ import NoRepos from "./Repositories/NoRepos/NoRepos";
 import "./Success.css";
 
 function Success(props) {
-  if (props.repos.length) {
+  if (props.user.public_repos) {
     return (
       <div className="success">
         <Profile user={props.user} />
-        <Repositories repos={props.repos} />
+        <Repositories user_name={props.user.login} length={props.user.public_repos}/>
       </div>
     );
   } else {

@@ -32,7 +32,7 @@ function Main(props) {
   } else {
     return (
       <div className="main">
-        <Success user={props.user} repos={props.repos} />
+        <Success user={props.user} />
       </div>
     );
   }

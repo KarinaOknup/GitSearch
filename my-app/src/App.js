@@ -10,7 +10,6 @@ function App(props) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [login, setLogin] = useState("");
   const [user, setUser] = useState([]);
-  const [repos, setRepos] = useState([]);
   const [enter, setEnter] = useState(false);
   const [start, setStart] = useState(true);
 
@@ -30,7 +29,6 @@ function App(props) {
           document.body.removeChild(alert);
         }, 2000);
       }
-      console.log(login);
     }
   }
 
@@ -49,20 +47,20 @@ function App(props) {
             setError(error);
           }
         )
-        .then(
-          fetch(`https://api.github.com/users/${login}/repos`)
-            .then((res) => res.json())
-            .then(
-              (result) => {
-                setIsLoaded(true);
-                setRepos(result);
-              },
-              (error) => {
-                setIsLoaded(true);
-                setError(error);
-              }
-            )
-        );
+        // .then(
+        //   fetch(`https://api.github.com/users/${login}/repos`)
+        //     .then((res) => res.json())
+        //     .then(
+        //       (result) => {
+        //         setIsLoaded(true);
+        //         setRepos(result);
+        //       },
+        //       (error) => {
+        //         setIsLoaded(true);
+        //         setError(error);
+        //       }
+        //     )
+        // );
     }
   }, [enter]);
 
@@ -85,7 +83,6 @@ function App(props) {
         error={error}
         isLoaded={isLoaded}
         user={user}
-        repos={repos}
         start={start}
       />
     </div>
