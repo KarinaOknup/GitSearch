@@ -15,7 +15,6 @@
   display: flex;
   flex-flow: nowrap;
   overflow: hidden;
-
 }
 .rep-item h4 {
   font-weight: normal;
@@ -23,8 +22,11 @@
   line-height: 19px;
   overflow: hidden;
 }
-@media (max-width: 800px) {
-  .rep-item {
-    background-color: rgb(255, 255, 255);
+@media (max-width: 500px) {
+  .rep-item h4 {
+    font-size: 14px;
+  }
+  .rep-item a {
+    font-size: 20px;
   }
 }

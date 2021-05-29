@@ -1,5 +1,4 @@
 .header {
-  width: 100vw;
   height: 72px;
   background-color: #0064eb;
   display: flex;
@@ -29,6 +28,10 @@
   height: 40px;
   padding-left: 40px;
   outline: none;
+}
+.submit {
+  visibility: hidden;
+  width: 0;
 }
 @media (max-width: 650px) {
   .header {
