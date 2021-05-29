@@ -3,7 +3,6 @@ import "./App.css";
 import "./components/Header/Header.css";
 import Main from "./components/Main/Main";
 import { useState } from "react";
-import { useEffect } from "react";
 
 function App(props) {
   const [error, setError] = useState(null);

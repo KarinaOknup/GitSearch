@@ -14,17 +14,17 @@ function Repositories(props) {
 
   const pageCount = Math.ceil(props.length / PER_PAGE);
 
-
   useEffect(() => {
       handleFetch(
       `https://api.github.com/users/${
         props.user_name
       }/repos?per_page=${PER_PAGE}&page=${currentPage + 1}`
     );
-  }, [currentPage]);
+  }, [currentPage,props.user_name]);
 
 
   const handleFetch = (url) => {
+    console.log('я пришёл к тебе с привет, рассказать что солнце встало')
     fetch(url)
       .then((res) => res.json())
       .then(
