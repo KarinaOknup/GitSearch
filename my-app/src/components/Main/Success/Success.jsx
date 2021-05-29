@@ -9,7 +9,10 @@ function Success(props) {
     return (
       <div className="success">
         <Profile user={props.user} />
-        <Repositories user_name={props.user.login} length={props.user.public_repos} />
+        <Repositories
+          user_name={props.user.login}
+          length={props.user.public_repos}
+        />
       </div>
     );
   } else {

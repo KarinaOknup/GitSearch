@@ -14,37 +14,3 @@
     margin: 20px auto;
   }
 }
-.pag-box {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-}
-.pag-box span {
-  color: #808080;
-}
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-  cursor: pointer;
-}
-.pagination a {
-  padding: 5px;
-  border-radius: 5px;
-  color: #808080;
-}
-.pag-nav {
-  font-weight: bold;
-}
-.pag-nav--active a {
-  color: #fff;
-  background: #0064eb;
-}
-.pag-nav--disabled a {
-  color: rgb(198, 197, 202);
-}
-@media (max-width: 800px) {
-  .pag-box {
-    margin: auto;
-  }
-}

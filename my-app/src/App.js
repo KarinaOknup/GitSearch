@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
-import Header from './components/Header/Header'
-// import "./components/Header/Header.css";
+import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import { useState } from "react";
 
@@ -25,13 +24,13 @@ function App(props) {
           setIsLoaded(true);
           setError(error);
         }
-      )
+      );
   };
 
   let handleSubmit = (e) => {
     setLogin(login.replace(/\s/g, ""));
     let rus = /[а-яё]/i.test(login);
-    if (!rus && !login=='') {
+    if (!rus && !login == "") {
       fetchAPI();
     } else if (rus) {
       let alert = document.createElement("div");
@@ -47,29 +46,8 @@ function App(props) {
 
   return (
     <div className="app-wrapper">
-      {/* <header className="header">
-        <i className="fab fa-github git-logo"></i>
-
-        <div className="search-box">
-          <i className="fas fa-search search-feedback"></i>
-        <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                className="search-input"
-                placeholder="Enter GitHub username"
-                onChange={(e) => setLogin(e.target.value)}
-              />
-            <input type="submit" className="submit"/>
-        </form>
-        </div>
-      </header> */}
-      <Header handleSubmit={handleSubmit} setLogin={setLogin}/>
-      <Main
-        error={error}
-        isLoaded={isLoaded}
-        user={user}
-        start={start}
-      />
+      <Header handleSubmit={handleSubmit} setLogin={setLogin} />
+      <Main error={error} isLoaded={isLoaded} user={user} start={start} />
     </div>
   );
 }
