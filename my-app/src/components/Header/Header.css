@@ -30,6 +30,10 @@
   padding-left: 40px;
   outline: none;
 }
+.submit{
+  visibility: hidden;
+  width: 0;
+}
 @media (max-width: 650px) {
   .header {
     height: auto;

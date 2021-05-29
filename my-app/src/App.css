@@ -6,9 +6,7 @@
   height: 40vmin;
   pointer-events: none;
 }
-.submit{
-  visibility: hidden;
-}
+
 .alert-rus {
   width: 250px;
   background-color: rgb(255, 255, 255);

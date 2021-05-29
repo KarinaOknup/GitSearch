@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
-import "./components/Header/Header.css";
+import Header from './components/Header/Header'
+// import "./components/Header/Header.css";
 import Main from "./components/Main/Main";
 import { useState } from "react";
 
@@ -46,7 +47,7 @@ function App(props) {
 
   return (
     <div className="app-wrapper">
-      <header className="header">
+      {/* <header className="header">
         <i className="fab fa-github git-logo"></i>
 
         <div className="search-box">
@@ -61,7 +62,8 @@ function App(props) {
             <input type="submit" className="submit"/>
         </form>
         </div>
-      </header>
+      </header> */}
+      <Header handleSubmit={handleSubmit} setLogin={setLogin}/>
       <Main
         error={error}
         isLoaded={isLoaded}
