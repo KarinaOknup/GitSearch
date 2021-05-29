@@ -1,6 +1,6 @@
 import React from "react";
 import ReactPaginate from "react-paginate";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Repositories.css";
 import Load from "../../Load/Load";
 import RepItem from "./RepItem/RepItem";
@@ -9,67 +9,62 @@ const PER_PAGE = 4;
 
 function Repositories(props) {
   const [currentPage, setCurrentPage] = useState(0);
-  const [pageCount, setPageCount] = useState(1);
   const [data, setData] = useState([]);
-  const [isLoaded, setisLoaded] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const pageCount = Math.ceil(props.length / PER_PAGE);
+
+  useEffect(() => {
+      handleFetch(
+      `https://api.github.com/users/${
+        props.user_name
+      }/repos?per_page=${PER_PAGE}&page=${currentPage + 1}`
+    );
+  }, [currentPage,props.user_name]);
 
 
   const handleFetch = (url) => {
+    console.log('я пришёл к тебе с привет, рассказать что солнце встало')
     fetch(url)
       .then((res) => res.json())
-      .then((result) => {
-        setData(result);
-        setisLoaded(true);
-        setPageCount(Math.ceil(props.length / PER_PAGE));
-      })
-      .catch((error) => console.error("Error", error));
+      .then(
+        (result) => {
+          setIsLoaded(true);
+          setData(result);
+        },
+        (error) => {
+          alert(error);
+        }
+      )
   };
 
-  const handlePageClick = (selectedObject) => {
-    setCurrentPage(selectedObject.selected);
-    handleFetch(`https://api.github.com/users/${props.user_name}/repos?per_page=${PER_PAGE}&page=${currentPage}`);
+  const handlePageClick = ({ selected: selectedPage }) => {
+    setCurrentPage(selectedPage);
   };
-  handleFetch(`https://api.github.com/users/${props.user_name}/repos?per_page=${PER_PAGE}&page=${currentPage}`);
+
+  const currentPageData = data.map((repItem) => {
+    return (
+      <RepItem
+        description={repItem.description}
+        url={repItem.svn_url}
+        name={repItem.name}
+        key={repItem.id}
+      />
+    );
+  });
+
   if (props.length <= 4) {
     return (
       <div className="repositories">
         <h2>Repositories ({props.length})</h2>
-        {isLoaded ? (
-          data.map((repItem) => {
-            return (
-              <RepItem
-                description={repItem.description}
-                url={repItem.svn_url}
-                name={repItem.name}
-                key={repItem.id}
-              />
-            );
-          })
-        ) : (
-          <Load/>
-        )}
+        <div className="rep-box">{isLoaded ? currentPageData : <Load />}</div>
       </div>
     );
   } else {
-    console.log(URL);
     return (
       <div className="repositories">
         <h2>Repositories ({props.length})</h2>
-
-        {isLoaded ? (
-          data.map((repItem) => {
-            return (
-              <RepItem
-                description={repItem.description}
-                url={repItem.svn_url}
-                name={repItem.name}
-                key={repItem.id}
-              />
-            );
-          })
-        ) : (
-          <Load/>
-        )}
+        <div className="rep-box">{isLoaded ? currentPageData : <Load />}</div>
         {isLoaded ? (
           <div className="pag-box">
             <span>
@@ -91,7 +86,7 @@ function Repositories(props) {
             />
           </div>
         ) : (
-          <Load/>
+          <Load />
         )}
       </div>
     );
