@@ -6,7 +6,7 @@ function Fail(props) {
     <div className="fail">
       <div className="fail-box">
         <i className="far fa-user"></i>
-        <span>User not found FUCK</span>
+        <span>User not found</span>
       </div>
     </div>
   );
